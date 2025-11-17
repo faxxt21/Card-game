@@ -1,0 +1,119 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Times New Roman", Times, serif;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+.game-container {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 100%;
+  max-width: 700px;
+}
+h1 {
+  margin-bottom: 10px;
+  color: #000000;
+}
+.round-counter {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #666666;
+}
+.scoreboard {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+  background-color: #faddef;
+  padding: 15px;
+  border-radius: 10px;
+}
+.player-box {
+  text-align: center;
+}
+.player-box h2 {
+  font-size: 22px;
+  margin-bottom: 5px;
+  color: #000000;
+}
+.score-badge {
+  background-color: #f161ba;
+  color: #ffffff;
+  font-weight: bold;
+  padding: 5px 20px;
+  border-radius: 5px;
+  font-size: 28px;
+  display: inline-block;
+  margin-top: 5px;
+}
+.battle-field {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+.card-slot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.card-slot img {
+  width: 145px;
+  height: 170px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  object-fit: cover;
+}
+.card-value {
+  margin-top: 10px;
+  font-weight: bold;
+  font-size: 18px;
+}
+.vs {
+  font-weight: bold;
+  color: #000000;
+  font-size: 24px;
+}
+button {
+  background-color: #f161ba;
+  color: #ffffff;
+  border: none;
+  padding: 15px 40px;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+  width: 100%;
+  max-width: 300px;
+}
+button:hover {
+  background-color: #eb47ac;
+}
+#statusMessage {
+  margin-top: 15px;
+  font-size: 16px;
+  color: #000000;
+  min-height: 24px;
+}
+@media (max-width: 480px) {
+  .battle-field {
+    gap: 10px;
+  }
+  .card-slot img {
+    width: 90px;
+    height: 130px;
+  }
+}
