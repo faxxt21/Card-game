@@ -43,15 +43,14 @@ btn.addEventListener('click', function() {
             if (userScore === 21 && computerScore === 21) {
                 alert(`Неймовірно! У обох 21! Нічия!`);
             } else if (userScore === 21) {
-                alert(`БЛЕКДЖЕК! ${userName} набрав 21 і миттєво переміг!`);
+                alert(`${userName} набрав 21 і переміг!`);
             } else {
                 alert(`Комп'ютер набрав 21 і переміг!`);
             }
             btn.innerText = "Грати знову";
         }, 200);
-        return;
     }
-    if (userScore > 21 || computerScore > 21) {
+    else if (userScore > 21 || computerScore > 21) {
         isGameOver = true;
         setTimeout(() => {
             if (userScore > 21 && computerScore > 21) {
@@ -63,9 +62,8 @@ btn.addEventListener('click', function() {
             }
             btn.innerText = "Грати знову";
         }, 200);
-        return;
     }
-    if (round === 3) {
+    else if (round === 3) {
         setTimeout(() => {
             if (userScore > computerScore) alert(`Кінець гри! ${userName} виграв (${userScore}:${computerScore})`);
             else if (computerScore > userScore) alert(`Кінець гри! Комп'ютер виграв (${computerScore}:${userScore})`);
