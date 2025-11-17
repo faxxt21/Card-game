@@ -9,7 +9,6 @@ let userScore = 0;
 let computerScore = 0;
 let round = 0;
 let isGameOver = false; 
-
 let userName = prompt("Введіть ваше ім'я:") || "Гравець";
 if(document.getElementById('userName')) {
     document.getElementById('userName').innerText = userName;
@@ -42,11 +41,25 @@ btn.addEventListener('click', function() {
         isGameOver = true;
         setTimeout(() => {
             if (userScore === 21 && computerScore === 21) {
-                alert(`Неймовірно! У обох 21! Нічия! 🤝`);
+                alert(`Неймовірно! У обох 21! Нічия!`);
             } else if (userScore === 21) {
                 alert(`БЛЕКДЖЕК! ${userName} набрав 21 і миттєво переміг!`);
             } else {
                 alert(`Комп'ютер набрав 21 і переміг!`);
+            }
+            btn.innerText = "Грати знову";
+        }, 200);
+        return;
+    }
+    if (userScore > 21 || computerScore > 21) {
+        isGameOver = true;
+        setTimeout(() => {
+            if (userScore > 21 && computerScore > 21) {
+                alert(`Обидва перебрали! Нічия.`);
+            } else if (userScore > 21) {
+                alert(`Перебір! У вас ${userScore}. Ви програли.`);
+            } else {
+                alert(`Комп'ютер перебрав (${computerScore}). Ви виграли!`);
             }
             btn.innerText = "Грати знову";
         }, 200);
@@ -57,6 +70,7 @@ btn.addEventListener('click', function() {
             if (userScore > computerScore) alert(`Кінець гри! ${userName} виграв (${userScore}:${computerScore})`);
             else if (computerScore > userScore) alert(`Кінець гри! Комп'ютер виграв (${computerScore}:${userScore})`);
             else alert(`Кінець гри! Нічия! (${userScore}:${userScore})`);
+            
             btn.innerText = "Грати знову";
         }, 500);
     }
